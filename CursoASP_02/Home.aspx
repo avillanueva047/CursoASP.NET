@@ -9,6 +9,9 @@
     }
     calcularArea();
     Session("area") = area;
+
+    var nombres = ["Paco", "Juanmi", "Esther", "Noelia"];
+    var edad = [44, 37, 35, 45];
 %>
 
 
@@ -23,8 +26,31 @@
     <h1>Curso ASPX</h1>
     <h3>Ejemplo variables y constantes</h3>
     <% 
-        Response.Write("<p>El área de un círculo de radio "+intRadius+" es "+area+"</p>");
+        Response.Write("<p>El área de un círculo de radio " + intRadius + " es "+area+"</p>");
     %>
     <a href="EjemploSesion.aspx">Ejemplo Sesion</a>
+
+    <h3>Ejemplo secuencias de servidor y cliente</h3>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Edad</th>
+        </tr>
+        <%
+            for(var i = 0; i < nombres.length; i++){
+                Response.Write("<tr>");
+                Response.Write("<td>" + nombres[i] + "</td>");
+                Response.Write("<td>" + edad[i] + "</td>");
+                Response.Write("</tr>");
+            }
+        %>
+    </table>
+
+    <h3>Ejemplo Formularios. Cálculo IMC</h3>
+    <form action="Imc.aspx" method="post">
+        Estatura [cm]: <input type="text" name="estatura"/><br />
+        Peso [kg]: <input type="text" name="peso" /><br />
+        <input type="submit" value="CALCULAR"/>
+    </form>
 </body>
 </html>

@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Home.aspx" />
+    <Content Include="listaImc.aspx" />
     <Content Include="Web.config" />
     <Content Include="EjemploSesion.aspx" />
+    <Content Include="Imc.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Home.aspx.cs">
@@ -79,6 +81,13 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="listaImc.aspx.cs">
+      <DependentUpon>listaImc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="listaImc.aspx.designer.cs">
+      <DependentUpon>listaImc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="EjemploSesion.aspx.cs">
       <DependentUpon>EjemploSesion.aspx</DependentUpon>
@@ -86,6 +95,13 @@
     </Compile>
     <Compile Include="EjemploSesion.aspx.designer.cs">
       <DependentUpon>EjemploSesion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Imc.aspx.cs">
+      <DependentUpon>Imc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Imc.aspx.designer.cs">
+      <DependentUpon>Imc.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
