@@ -1,4 +1,4 @@
-﻿<%@ Page Language="JScript" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="CursoASP_02.Home" %>
+﻿<%@ Page AspCompat="true" Language="JScript" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="CursoASP_02.Home" %>
 <%
     var intRadius, area;
     
@@ -12,6 +12,11 @@
 
     var nombres = ["Paco", "Juanmi", "Esther", "Noelia"];
     var edad = [44, 37, 35, 45];
+
+    var conn = Server.CreateObject("ADODB.Connection");
+    conn.Open("DRIVER={Microsoft Access Driver (*.mdb)}; DBQ=D:/Users/Adalid Villanueva/Desktop/Curso_ASP.NET/CursoASP/CursoASP_02/curso.mdb");
+    var rs = Server.CreateObject("ADODB.recordset");
+    rs.Open("SELECT * FROM IMC", conn);
 %>
 
 
@@ -51,6 +56,13 @@
         Estatura [cm]: <input type="text" name="estatura"/><br />
         Peso [kg]: <input type="text" name="peso" /><br />
         <input type="submit" value="CALCULAR"/>
+    </form>
+
+    <h3>Ejemplo Formularios Version 2. Acceso Edificio</h3>
+    <form action="Info.aspx" method="post">
+        Nombre: <input type="text" name="nombre"/><br />
+        DNI: <input type="text" name="dni"/><br />
+        <input type="submit" value="ACCEDER" />
     </form>
 </body>
 </html>
