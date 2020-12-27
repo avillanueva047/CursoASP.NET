@@ -17,6 +17,8 @@
     conn.Open("DRIVER={Microsoft Access Driver (*.mdb)}; DBQ=D:/Users/Adalid Villanueva/Desktop/Curso_ASP.NET/CursoASP/CursoASP_02/curso.mdb");
     var rs = Server.CreateObject("ADODB.recordset");
     rs.Open("SELECT * FROM IMC", conn);
+    rs.close;
+    conn.close;
 %>
 
 
@@ -60,9 +62,15 @@
 
     <h3>Ejemplo Formularios Version 2. Acceso Edificio</h3>
     <form action="Info.aspx" method="post">
-        Nombre: <input type="text" name="nombre"/><br />
-        DNI: <input type="text" name="dni"/><br />
-        <input type="submit" value="ACCEDER" />
+        <div>
+            Nombre: <input type="text" name="nombre"/><br />
+        </div>
+        <div>
+            DNI: <input type="text" name="dni"/><br />
+        </div>
+        <div>
+            <input type="submit" value="ACCEDER" />
+        </div>
     </form>
 </body>
 </html>
