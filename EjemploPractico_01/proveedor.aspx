@@ -14,9 +14,21 @@
     }
 
     /*
-      Is needed a simple quote (\') character between the VARCHAR value to get inserted
+    *   Is needed a simple quote (\') character between the VARCHAR value to get inserted.
+    *   When is need to verify if a field value is already inserted, in SQL ACCESS the command
+    *   "SELECT TOP 1" is needed on the query.
     */
-    var sql = "INSERT INTO PROVEEDOR (PROVEEDOR, CIF, CIUDAD, TELEFONO) VALUES (\'" + proveedor + "\', \'" + cif + "\', \'" + ciudad + "\', \'" + tlf + "\')";
+    var sql = "INSERT INTO PROVEEDOR (PROVEEDOR, CIF, CIUDAD, TELEFONO) SELECT TOP 1 \'" 
+                + proveedor 
+                + "\', \'" 
+                + cif 
+                + "\', \'" 
+                + ciudad 
+                + "\', \'" 
+                + tlf 
+                + "\' FROM PROVEEDOR WHERE NOT EXISTS ( SELECT PROVEEDOR FROM PROVEEDOR WHERE PROVEEDOR = \'"
+                + proveedor
+                + "\');";
     conn.Execute(sql);
     conn.close;
 %>
