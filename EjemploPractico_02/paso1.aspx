@@ -23,7 +23,7 @@
     <form id="form1" runat="server" action="paso2.aspx" method="post">
         <div>
             <label for="question_02">Del 1 al 5, Indique el grado de satisfacción con el proceso de compra</label><br />
-            <select name="question_01">
+            <select name="question_02">
                 <option value = "5">Muy Buena(5)</option>
                 <option value = "4">Buena (4)</option>
                 <option value = "3">Regular (3)</option>
