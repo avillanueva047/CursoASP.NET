@@ -1,5 +1,16 @@
 ﻿<%@ Page AspCompat="true" Language="JScript" AutoEventWireup="true" CodeBehind="paso1.aspx.cs" Inherits="EjemploPractico_02.paso1" %>
 
+<% 
+    /*
+    *   We use Session to store a variables globally.
+    *   Once the session is ended, is better to clear
+    *   the data with Session.Clear()
+    */
+
+    var question_01 = Request.Form("question_01");
+    Session["question_01"] = question_01;
+%>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
